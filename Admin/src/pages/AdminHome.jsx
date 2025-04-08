@@ -13,7 +13,7 @@ import OrdersList from "./Orders/OrderList";
 import UsersList from "./Users/UsersList";
 import Reviews from "./Reviews/reviews"
 import DashboardHome from './Home'
-import CartList from "./cart/cartList";
+import CartList from "./cart/CartList.jsx";
 
 const AdminHome = () => {
   const navigate = useNavigate();
