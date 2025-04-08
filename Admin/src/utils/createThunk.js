@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { setSuccess } from "../slices/notificationSlice";
-import { setError } from "../slices/notficationSlice copy";
+import { setSuccess, setError } from "../slices/notificationSlice";
 
 const createThunk = (type, apiCall, skipSuccess = false) => {
     return createAsyncThunk(type, async (payload, { dispatch, rejectWithValue }) => {
