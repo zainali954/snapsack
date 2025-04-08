@@ -83,14 +83,14 @@ export const login = asyncHandler(async (req, res) => {
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'Strict',
+            sameSite: 'None',
             maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
         });
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'Strict',
+            sameSite: 'None',
             maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
         });
 
@@ -164,14 +164,14 @@ export const googleLogin = asyncHandler(async (req, res) => {
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'Strict',
+            sameSite: 'None',
             maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
         });
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'Strict',
+            sameSite: 'None',
             maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
         });
 
@@ -273,14 +273,14 @@ export const refreshToken = asyncHandler(async (req, res,) => {
     res.cookie("accessToken", accessToken, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "Strict",
+        sameSite: "None",
         maxAge: 30 * 60 * 1000, // 30 minutes
     });
 
     res.cookie("refreshToken", refreshToken, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "Strict",
+        sameSite: "None",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
 
