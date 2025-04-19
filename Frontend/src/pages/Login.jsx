@@ -36,9 +36,6 @@ const Login = () => {
     }
   };
 
-  const handleGoogleSignup = () => {
-    alert("Google login coming soon!");
-  };
 
   return (
     <>

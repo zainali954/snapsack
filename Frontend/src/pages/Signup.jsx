@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../slices/authSlice";
 import { toast } from "react-toastify";
 import { BiLogoGoogle } from "react-icons/bi";
+import useGoogleAuth from "../utils/useGoogleLoginAuth";
+import Loader from "../Components/Loader";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -15,6 +17,8 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
+  const { loginWithGoogle, loading } = useGoogleAuth();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,6 +56,9 @@ const Signup = () => {
   };
 
   return (
+    <>
+    {loading && <Loader />} 
+    
     <div className="relative min-h-screen flex items-center justify-center p-6">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#FFA5000a_1px,transparent_1px),linear-gradient(to_bottom,#FFA5000a_1px,transparent_1px)] bg-[size:54px_64px]">
@@ -161,7 +168,7 @@ const Signup = () => {
 
         {/* Google Sign-Up Button */}
         <button
-          onClick={handleGoogleSignup}
+          onClick={loginWithGoogle}
           className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-600 bg-gray-100 border rounded-lg hover:bg-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300"
         >
           <BiLogoGoogle/>
@@ -179,6 +186,8 @@ const Signup = () => {
         </p>
       </div>
     </div>
+
+    </>
   );
 };
 
